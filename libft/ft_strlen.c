@@ -6,13 +6,13 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:33:12 by clora-ro          #+#    #+#             */
-/*   Updated: 2021/11/08 16:50:14 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2021/11/23 09:09:29 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 

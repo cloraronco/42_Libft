@@ -6,13 +6,13 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:00:22 by clora-ro          #+#    #+#             */
-/*   Updated: 2021/11/09 10:02:08 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2021/11/22 17:19:21 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	boucle(char c, char *str)
+static int	boucle(char c, char *str)
 {
 	while (*str)
 	{
@@ -23,12 +23,12 @@ int	boucle(char c, char *str)
 	return (0);
 }
 
-int	space(char c)
+static int	space(char c)
 {
 	return (boucle(c, "\t\n\v\f\r "));
 }
 
-int	operator(char c)
+static int	operator(char c)
 {
 	return (boucle(c, "+-"));
 }

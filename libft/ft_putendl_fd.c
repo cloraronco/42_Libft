@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 11:55:57 by clora-ro          #+#    #+#             */
-/*   Updated: 2021/11/16 10:42:41 by clora-ro         ###   ########lyon.fr   */
+/*   Created: 2021/11/22 12:44:50 by clora-ro          #+#    #+#             */
+/*   Updated: 2021/11/22 14:48:16 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char			*str;
-	unsigned int	j;
+	int	i;
 
-	str = s;
-	j = 0;
-	while (j != n)
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
 	{
-		str[j] = 0;
-		j++;
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
+	ft_putchar_fd('\n', fd);
 }

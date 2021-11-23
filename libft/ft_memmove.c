@@ -6,7 +6,7 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:20:11 by clora-ro          #+#    #+#             */
-/*   Updated: 2021/11/10 10:05:08 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2021/11/16 12:49:18 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,16 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	i = 0;
 	dst = (unsigned char *)dest;
 	srcs = (unsigned char *)src;
-	if (dst > srcs)
+	if (len == 0 || dest == src)
+		return (dest);
+	while (i < len)
 	{
-		while (i < len)
+		if (dest > src)
 		{
 			dst[len - 1] = srcs[len - 1];
 			len--;
 		}
-	}
-	else
-	{
-		while (i < len)
+		else
 		{
 			dst[i] = srcs[i];
 			i++;

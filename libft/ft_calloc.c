@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 14:17:57 by clora-ro          #+#    #+#             */
-/*   Updated: 2021/11/09 11:12:40 by clora-ro         ###   ########lyon.fr   */
+/*   Created: 2021/11/16 08:53:18 by clora-ro          #+#    #+#             */
+/*   Updated: 2021/11/22 17:18:48 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t n)
+void	*ft_calloc(size_t elementCount, size_t elementSize)
 {
-	size_t	i;
-	int		j;
-	char	*pt;
+	unsigned int	i;
+	char			*str;
 
-	pt = 0;
 	i = 0;
-	if (to_find[0] == '\0')
-		return ((char *)str);
-	while (str[i] && (i < n))
+	str = malloc((elementSize * elementCount) * sizeof(char));
+	if (!str)
+		return (NULL);
+	while (i != (elementSize * elementCount))
 	{
-		if (str[i] == to_find[0])
-		{
-			pt = (char *)str + i;
-			j = 0;
-			while (str[i + j] == to_find[j] && i + j < n)
-			{
-				if (to_find[j + 1] == '\0')
-					return (pt);
-				j++;
-			}
-			pt = 0;
-		}
+		str[i] = 0;
 		i++;
 	}
-	return (NULL);
+	return (str);
 }
